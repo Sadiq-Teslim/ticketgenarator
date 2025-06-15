@@ -1,0 +1,142 @@
+:root {
+  --bg-dark: #0f172a;
+  --accent-teal: #14b8a6;
+  --accent-cyan: #06b6d4;
+  --accent-sky: #38bdf8;
+  --text-light: #e2e8f0;
+  --text-dark: #1e293b;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg-dark);
+  background-image: url("https://images.unsplash.com/photo-1527529482837-4698179dc6ce?q=80&w=2070&auto=format&fit=crop");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.orb-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(100px);
+}
+
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 20s infinite ease-in-out;
+}
+
+.orb-1 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--accent-teal), transparent 70%);
+  top: 10%;
+  left: 10%;
+  animation-duration: 25s;
+}
+.orb-2 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--accent-cyan), transparent 70%);
+  bottom: 15%;
+  right: 20%;
+  animation-duration: 18s;
+  animation-delay: -5s;
+}
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, var(--accent-sky), transparent 70%);
+  top: 25%;
+  right: 15%;
+  animation-duration: 22s;
+  animation-delay: -10s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(20px, 40px);
+  }
+  50% {
+    transform: translate(-30px, -10px);
+  }
+  75% {
+    transform: translate(10px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.ticket-card-container {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(25px) saturate(180%);
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.text-gradient {
+  background: linear-gradient(
+    45deg,
+    var(--accent-teal),
+    var(--accent-cyan),
+    var(--accent-sky)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.btn-primary {
+  background-image: linear-gradient(
+    45deg,
+    var(--accent-teal) 0%,
+    var(--accent-cyan) 50%,
+    var(--accent-sky) 100%
+  );
+  background-size: 200% auto;
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  box-shadow: 0 8px 20px rgba(6, 182, 212, 0.25);
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-3px) scale(1.03);
+  background-position: right center;
+  box-shadow: 0 12px 25px rgba(6, 182, 212, 0.35);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Custom styles for quantity buttons */
+.quantity-btn {
+  transition: all 0.2s ease;
+}
+.quantity-btn:hover {
+  transform: scale(1.1);
+  background-color: #e2e8f0; /* slate-200 */
+}
