@@ -112,7 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const response = await fetch('http://localhost:3000/api/pay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, amount: amountInKobo })
+        body: JSON.stringify({ name, email, amount: amountInKobo }),
+        // frontend_origin: window.location.origin
       })
 
       const data = await response.json()
