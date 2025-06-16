@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     try {
       // Send data to YOUR backend, not Paystack directly
-      const response = await fetch('http://localhost:3000/api/pay', {
+      const response = await fetch('https://ticket-backend-zyfn.onrender.com/api/pay', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, amount: amountInKobo }),
