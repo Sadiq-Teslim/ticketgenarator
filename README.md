@@ -29,7 +29,7 @@ This is the official web portal for purchasing tickets to the University of Lago
 
 ## Live Demo
 
-> [https://ules-dinner.vercel.app]
+> [Live Demo](https://ules-dinner.vercel.app)
 
 ## Technology Stack
 
