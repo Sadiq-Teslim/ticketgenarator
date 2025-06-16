@@ -1,16 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful</title>
+    <title>Payment Successful | ULES Dinner & Awards</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../styles/sucess.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/nobgules-logo.png">
 </head>
-<body class="bg-gray-100 flex items-center justify-center h-screen">
-    <div class="text-center bg-white p-10 rounded-lg shadow-lg">
-        <h1 class="text-4xl font-bold text-green-500 mb-4">Payment Successful!</h1>
-        <p class="text-gray-700">Thank you for your purchase. Your ticket has been sent to your email.</p>
-        <a href="../index.html" class="mt-6 inline-block bg-blue-500 text-white font-bold py-2 px-4 rounded">Go to Homepage</a>
+
+<body class="flex items-center justify-center min-h-screen p-4 text-slate-800">
+
+    <div class="orb-container">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
+
+    <main class="relative z-10 w-full max-w-lg">
+        <div class="success-card rounded-3xl p-8 md:p-10 text-center">
+
+            <div class="mb-5">
+                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+                </svg>
+            </div>
+
+            <!-- Success Message -->
+            <h1 class="text-4xl font-extrabold tracking-tight text-slate-900 mb-2">
+                Payment <span class="text-gradient">Successful!</span>
+            </h1>
+            <p class="text-slate-600 font-medium text-lg mb-8">
+                Thank you for your purchase. See you at ULES Dinner! A confirmation email with your e-ticket has been
+                sent.
+            </p>
+
+            <!-- Call to Action Button -->
+            <a href="../index.html" class="btn-primary w-full block text-white font-bold text-lg py-4 px-8 rounded-xl">
+                Return to Homepage
+            </a>
+
+        </div>
+
+        <footer class="text-center mt-6">
+            <p class="text-sm text-slate-900">
+                Built with ❤️ by <a href="https://github.com/Team-BitNomads"
+                    class="font-bold hover:text-white transition" target="_blank"
+                    rel="noopener noreferrer">BitNomads</a>
+            </p>
+        </footer>
+
+    </main>
+
 </body>
+
 </html>
