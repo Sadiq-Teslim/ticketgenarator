@@ -52,7 +52,7 @@ This is the official web portal for purchasing tickets to the University of Lago
 
 ```
 .
-├── backend/
+├── payments/
 │   ├── node_modules/
 │   ├── .env            # Securely stores API keys (DO NOT COMMIT)
 │   ├── package.json
@@ -60,8 +60,9 @@ This is the official web portal for purchasing tickets to the University of Lago
 │   └── server.js       # The Express server logic
 │
 ├── index.html          # The main event landing page
-├── tickets.html        # The ticket selection and checkout page
-├── success.html        # Page shown after a successful payment
+├──pages/
+    ├── tickets.html        # The ticket selection and checkout page
+    ├── success.html        # Page shown after a successful payment
 └── README.md           # You are here!
 ```
 
@@ -91,27 +92,32 @@ The frontend consists of static HTML files and requires no special build steps.
 The backend server is required to handle the secure payment logic.
 
 1.  **Navigate to the backend directory:**
+
     ```bash
     cd payment
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
 3.  **Create the environment file:**
     Create a file named `.env` in the `backend` directory.
+
     ```bash
     touch .env
     ```
 
 4.  **Add your Paystack Secret Key:**
     Open the `.env` file and add your **Test Secret Key** from your Paystack dashboard.
+
     ```env
     # .env
     PAYSTACK_SECRET_KEY=sk_test_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
     ```
+
     > **Security Warning:** Never commit the `.env` file to version control. The `.gitignore` file should include `.env`.
 
 5.  **Start the backend server:**
