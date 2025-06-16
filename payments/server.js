@@ -29,9 +29,7 @@ app.post('/api/pay', async (req, res) => {
     metadata: {
       full_name: name
     },
-    // IMPORTANT: Replace with your actual success/failure page URLs
     callback_url: '../pages/success.html',
-    // This is the URL Paystack will redirect to after payment
   })
 
   try {
@@ -50,7 +48,6 @@ app.post('/api/pay', async (req, res) => {
     const data = await response.json()
 
     if (!data.status) {
-      // If Paystack returns an error
       console.error('Paystack error:', data)
       return res.status(500).json({ message: data.message })
     }

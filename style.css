@@ -81,7 +81,6 @@ body {
   }
 }
 
-/* The main ticket card with "glassmorphism" effect */
 .ticket-card {
   background: rgba(255, 255, 255, 0.9);
   -webkit-backdrop-filter: blur(25px) saturate(180%);
@@ -102,7 +101,6 @@ body {
   }
 }
 
-/* Gradient text for titles */
 .text-gradient {
   background: linear-gradient(
     45deg,
@@ -115,7 +113,6 @@ body {
   background-clip: text;
 }
 
-/* The primary button style */
 .btn-primary {
   background-image: linear-gradient(
     45deg,

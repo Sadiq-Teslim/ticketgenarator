@@ -9,6 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartItemsEl = document.getElementById('cart-items')
   const totalPriceEl = document.getElementById('total-price')
   const checkoutBtn = document.getElementById('checkout-btn')
+  const successModal = document.getElementById('success-modal')
+  const successMessage = document.getElementById('success-message')
 
   // Modal elements
   const checkoutModal = document.getElementById('checkout-modal')
@@ -16,6 +18,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const paymentForm = document.getElementById('payment-form')
   const paymentAmountEl = document.getElementById('payment-amount')
   const payBtn = document.getElementById('pay-btn')
+
+  function showSuccessModal (ticketName) {
+    successMessage.textContent = `${ticketName} added to cart!`
+    successModal.classList.remove('hidden')
+
+    // Auto-hide after 5 seconds
+    setTimeout(() => {
+      successModal.classList.add('hidden')
+    }, 5000)
+  }
 
   function updateCart () {
     cartItemsEl.innerHTML = ''
@@ -38,6 +50,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cartItemsEl.appendChild(itemEl)
       }
     }
+
+    if (!hasItems) {
+      cartItemsEl.innerHTML =
+        '<p class="text-slate-400 text-center py-8">Your cart is empty</p>'
+    }
+
     currentTotal = total
     totalPriceEl.textContent = `₦${total.toLocaleString()}`
     checkoutBtn.disabled = !hasItems
@@ -46,8 +64,13 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.quantity-btn').forEach(button => {
     button.addEventListener('click', () => {
       const ticketType = button.dataset.ticket
+      const wasZero = tickets[ticketType].quantity === 0
+
       if (button.classList.contains('quantity-plus')) {
         tickets[ticketType].quantity++
+        if (wasZero) {
+          showSuccessModal(tickets[ticketType].name)
+        }
       } else if (
         button.classList.contains('quantity-minus') &&
         tickets[ticketType].quantity > 0
