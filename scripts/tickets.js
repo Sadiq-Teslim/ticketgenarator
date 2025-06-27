@@ -6,27 +6,25 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   let currentTotal = 0
 
+  // --- Element Selectors ---
   const cartItemsEl = document.getElementById('cart-items')
   const totalPriceEl = document.getElementById('total-price')
   const checkoutBtn = document.getElementById('checkout-btn')
   const successModal = document.getElementById('success-modal')
   const successMessage = document.getElementById('success-message')
-
-  // Modal elements
   const checkoutModal = document.getElementById('checkout-modal')
   const closeModalBtn = document.getElementById('close-modal-btn')
   const paymentForm = document.getElementById('payment-form')
   const paymentAmountEl = document.getElementById('payment-amount')
   const payBtn = document.getElementById('pay-btn')
 
+  // --- Functions ---
   function showSuccessModal (ticketName) {
     successMessage.textContent = `${ticketName} added to cart!`
     successModal.classList.remove('hidden')
-
-    // Auto-hide after 5 seconds
     setTimeout(() => {
       successModal.classList.add('hidden')
-    }, 5000)
+    }, 3000)
   }
 
   function updateCart () {
@@ -61,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutBtn.disabled = !hasItems
   }
 
+  // --- Event Listeners ---
   document.querySelectorAll('.quantity-btn').forEach(button => {
     button.addEventListener('click', () => {
       const ticketType = button.dataset.ticket
@@ -83,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   })
 
-  // Modal logic
   checkoutBtn.addEventListener('click', () => {
     if (currentTotal > 0) {
       paymentAmountEl.textContent = `₦${currentTotal.toLocaleString()}`
@@ -95,26 +93,42 @@ document.addEventListener('DOMContentLoaded', () => {
     checkoutModal.classList.add('hidden')
   )
 
-  // Payment form submission
+  // --- Payment Form Submission (UPDATED) ---
   paymentForm.addEventListener('submit', async e => {
     e.preventDefault()
 
     const name = document.getElementById('name').value
     const email = document.getElementById('email').value
-    // Paystack requires amount in the lowest currency unit (Kobo)
     const amountInKobo = currentTotal * 100
+
+    // Create a detailed cart object to send to the backend
+    const cartDetails = Object.entries(tickets)
+      .filter(([key, value]) => value.quantity > 0)
+      .map(([key, value]) => ({
+        type: key, // 'regular', 'vip', or 'vvip'
+        name: value.name,
+        quantity: value.quantity
+      }))
 
     payBtn.disabled = true
     payBtn.textContent = 'Processing...'
 
     try {
-      // Send data to YOUR backend, not Paystack directly
-      const response = await fetch('https://ticket-backend-zyfn.onrender.com/api/pay', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, amount: amountInKobo }),
-        // frontend_origin: window.location.origin
-      })
+      // Send payment request to the backend
+      const response = await fetch(
+        'https://ticket-backend-zyfn.onrender.com/api/pay',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            amount: amountInKobo,
+            frontend_origin: window.location.origin, // Sends your frontend URL for the callback
+            cart: cartDetails // Send the detailed cart
+          })
+        }
+      )
 
       const data = await response.json()
 
@@ -131,5 +145,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  updateCart() // Initial cart render
+  // Initial call to set up the cart on page load
+  updateCart()
 })
