@@ -1,5 +1,5 @@
 {
-  "name": "conference-ticket-generator-main",
+  "name": "ULES Dinner Ticket Generator",
   "version": "1.0.0",
   "description": "This is the official web portal for purchasing tickets to the University of Lagos Engineering Society (ULES) Annual Dinner & Awards Night. The application features a stunning landing page with event details and a seamless, multi-step ticketing process with a secure payment integration via Paystack.",
   "main": "tailwind.config.js",
@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/Sadiq-Teslim/ticketgenarator#readme",
   "devDependencies": {
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^3.4.0"
   }
 }
