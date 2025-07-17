@@ -4,85 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ULES Annual Dinner & Awards Night</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Your own output.css should be primary -->
+    <link href="./styles/output.css" rel="stylesheet"> 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- This is the external stylesheet you provided -->
+    <link rel="stylesheet" href="./style.css"> 
     <link rel="shortcut icon" href="./assets/images/nobgules-logo.png" type="image/x-icon">
 </head>
+
 <body class="flex items-center justify-center min-h-screen p-4 text-slate-800">
 
+    <!-- The background orbs are now controlled by your external style.css -->
     <div class="orb-container">
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
     </div>
 
-    <main class="relative z-10 w-full max-w-lg">
-        <div class="ticket-card rounded-3xl p-8 md:p-10 text-center">
-            
+    <main class="relative z-10 w-full max-w-md">
+        <!-- The ticket-card class uses styles from your external style.css -->
+        <div class="ticket-card rounded-2xl p-6 sm:p-8 text-center">
 
-            <div class="flex justify-center items-center gap-2 mb-6">
-                <div class=" w-12 h-12 rounded-lg flex items-center justify-center">
-                    <img src="./assets/images/nobgules-logo.png" alt="" class="w-32 h-18">
-                </div>
-                <div>
-                    <!-- <h2 class="font-bold text-2xl text-slate-900 text-center">ULES</h2> -->
-                    <h2 class="text-xl text-bold text-center text-slate-900">University of Lagos Engineering Society</h2>
-                </div>
+            <!-- Header Section -->
+            <div class="flex items-center justify-center gap-3 mb-4">
+                <img src="./assets/images/nobgules-logo.png" alt="ULES Logo" class="h-12 w-12">
+                <h2 class="text-lg font-semibold text-left text-slate-800">University of Lagos<br>Engineering Society</h2>
             </div>
 
-            <!-- Event Title -->
-            <h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900 mb-2">
-                Annual Faculty Dinner & <br> <span class="text-gradient">Awards Night</span>
+            <!-- Event Title Section -->
+            <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 mb-1">
+                Annual Faculty Dinner & <br><span class="text-gradient">Awards Night</span>
             </h1>
-            <!-- To be changed to event theme -->
-            <p class="text-slate-600 font-medium text-lg mb-8">Innovate & Celebrate</p>
+            <p class="text-slate-500 font-medium text-md mb-6">Innovate & Celebrate</p>
 
-            <!-- Event Details -->
-            <div class="border-y border-slate-200 py-6 mb-8">
-                <ul class="space-y-4 text-left text-slate-700">
-                    <li class="flex items-center gap-4">
-                        <span class="bg-teal-100 text-teal-700 p-3 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+            <!-- Event Details Section -->
+            <div class="border-y border-slate-200 py-4 mb-6">
+                <ul class="space-y-3 text-left text-slate-700">
+                    <li class="flex items-center gap-3">
+                        <span class="bg-teal-100/70 text-teal-700 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
                         </span>
                         <div>
-                            <p class="font-semibold text-slate-800">September 3, 2025.</p>
-                            <p class="text-sm text-slate-500">Wednesday, 7:00 PM Prompt</p>
+                            <p class="font-semibold text-sm text-slate-800">September 3, 2025</p>
+                            <p class="text-xs text-slate-500">Wednesday, 7:00 PM Prompt</p>
                         </div>
                     </li>
-                    <li class="flex items-center gap-4">
-                        <span class="bg-sky-100 text-sky-700 p-3 rounded-full">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                    <li class="flex items-center gap-3">
+                        <span class="bg-sky-100/70 text-sky-700 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                         </span>
                         <div>
-                            <p class="font-semibold text-slate-800">Eko Hotel Grand Ballroom</p>
-                            <p class="text-sm text-slate-500">Victoria Island, Lagos</p>
+                            <p class="font-semibold text-sm text-slate-800">Eko Hotel Grand Ballroom</p>
+                            <p class="text-xs text-slate-500">Victoria Island, Lagos</p>
                         </div>
                     </li>
-                    <li class="flex items-center gap-4">
-                         <span class="bg-indigo-100 text-indigo-700 p-3 rounded-full">
-                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                         </span>
-                         <div>
-                             <p class="font-semibold text-slate-800">Black Tie / Formal</p>
-                             <p class="text-sm text-slate-500">Dress to impress</p>
-                         </div>
+                    <li class="flex items-center gap-3">
+                        <span class="bg-indigo-100/70 text-indigo-700 p-2 rounded-lg">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </span>
+                        <div>
+                            <p class="font-semibold text-sm text-slate-800">Black Tie / Formal</p>
+                            <p class="text-xs text-slate-500">Dress to impress</p>
+                        </div>
                     </li>
                 </ul>
             </div>
             
-            <!-- Call to Action Button -->
-            <a href="./pages/tickets.html" class="btn-primary w-full block text-white font-bold text-lg py-4 px-8 rounded-xl">
+            <!-- THE CORRECTED BUTTON CODE IS HERE 👇 -->
+            <a href="./pages/tickets.html" class="btn-primary w-full block text-white font-semibold text-base py-3 px-6 rounded-lg">
                 Get Your Ticket
             </a>
             
         </div>
         
-        <footer class="text-center mt-6">
-            <p class="text-sm text-slate-900">
-                Built with ❤️ by <a href="https://github.com/Team-BitNomads" class="font-bold hover:text-white transition" target="_blank" rel="noopener noreferrer">BitNomads</a>
+        <footer class="text-center mt-4">
+            <p class="text-xs text-white/80">
+                Built with ❤️ by <a href="https://github.com/Team-BitNomads" class="font-semibold hover:text-white transition" target="_blank" rel="noopener noreferrer">BitNomads</a>
             </p>
         </footer>
 
